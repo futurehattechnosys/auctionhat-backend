@@ -1,10 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const moment = require("moment-timezone");
-const Indiatime = moment.tz(Date.now(), "Asia/Calcutta");
-
-console.log(Indiatime);
 const app = express();
 
 console.log("Front Base URL: " + process.env.FRONTEND);
@@ -34,3 +30,15 @@ app.use("/api/point_slab", point_slab_route);
 
 const players_route = require("./app/routes/players.routes");
 app.use("/api/players", players_route);
+
+const teams_route = require("./app/routes/teams.routes");
+app.use("/api/teams", teams_route);
+
+const teams_players_route = require("./app/routes/teamsPlayers.routes");
+app.use("/api/teams_players", teams_players_route);
+
+const team_player_summary_route = require("./app/routes/teamPlayerSummary.routes");
+app.use("/api/team_player_summary", team_player_summary_route);
+
+const user_route = require("./app/routes/user.routes");
+app.use("/api/user", user_route);
