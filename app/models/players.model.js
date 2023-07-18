@@ -76,17 +76,10 @@ const Players = connection.define(
       defaultValue: 1,
       comment: "1. Active 2. InActive",
     },
-    is_deleted: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false,
-    },
-    deletedAt: {
-      type: DataTypes.DATE,
-    },
   },
   {
     paranoid: true,
+    timestamps: false,
     hooks: {
       afterCreate: (players) => {
         const playerObj = {

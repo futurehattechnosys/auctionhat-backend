@@ -25,8 +25,9 @@ const TeamPlayerSummary = connection.define(
       defaultValue: 0,
     },
     created: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE(3),
       allowNull: false,
+      defaultValue: connection.literal("CURRENT_TIMESTAMP(3)"),
     },
   },
   {

@@ -29,14 +29,14 @@ const TeamPlayers = connection.define(
       defaultValue: 0,
     },
     status: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 1,
       comment: "Icon / Token / Sold / Unsold",
     },
     created: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE(3),
       allowNull: false,
+      defaultValue: connection.literal("CURRENT_TIMESTAMP(3)"),
     },
   },
   {

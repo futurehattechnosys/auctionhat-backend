@@ -27,6 +27,16 @@ const Tournament = connection.define(
       allowNull: false,
       defaultValue: "no_photo.jpg",
     },
+    auction_theme: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "classic",
+    },
+    auction_template: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "A11",
+    },
     status: {
       type: DataTypes.INTEGER,
       allowNull: false,
